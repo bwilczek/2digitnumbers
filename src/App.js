@@ -14,7 +14,11 @@ function randomIntFromInterval(min, max) { // min and max included
 function formatSolution(solutionNumber) {
   let digit10 = parseInt(solutionNumber / 10)
   let digit1 = solutionNumber % 10
-  return <span><span style={{backgroundColor: '#ffff00'}}>{digit10}</span><span style={{backgroundColor: '#ff00ff'}}>{digit1}</span></span>
+  if(solutionNumber > 9) {
+    return <span><span style={{backgroundColor: '#ffff00'}}>{digit10}</span><span style={{backgroundColor: '#ff00ff'}}>{digit1}</span></span>
+  } else {
+    return <span style={{backgroundColor: '#ff00ff'}}>{digit1}</span>
+  }
 }
 
 function App() {
@@ -27,7 +31,7 @@ function App() {
       <Container fluid>
         <Row>
           <Col>
-            <NumbersTable solutionNumber={solutionNumber} content={"🍏"} useColors={useColors}/>
+            <NumbersTable solutionNumber={solutionNumber} content={"🐱"} useColors={useColors}/>
           </Col>
           <Col>
             <Button onClick={() => setSolutionNumber(randomIntFromInterval(1,99))}>Nowa liczba</Button>
