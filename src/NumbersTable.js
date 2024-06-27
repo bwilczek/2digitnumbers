@@ -1,5 +1,8 @@
 import Table from 'react-bootstrap/Table';
 
+let bgColor10 = '#F9FFB9'
+let bgColor1 = '#C8FFB9'
+
 function Cell({ myNumber, content, solutionNumber, useColors }) {
   let displayContent = myNumber <= solutionNumber ? content : ' '
   let style = {}
@@ -8,11 +11,11 @@ function Cell({ myNumber, content, solutionNumber, useColors }) {
   if(useColors) {
     if(myNumber > tens && myNumber <= solutionNumber) {
       // last row
-      style['backgroundColor'] = '#ff00ff'
+      style['backgroundColor'] = bgColor1
       style['borderRightWidth'] = '5px'
     } else if (myNumber <= tens) {
       // first rows
-      style['backgroundColor'] = '#ffff00'
+      style['backgroundColor'] = bgColor10
       style['borderBottomWidth'] = '5px'
     }
   }
